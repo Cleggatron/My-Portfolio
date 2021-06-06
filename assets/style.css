@@ -9,12 +9,20 @@ header{
 
 }
 
+ul{
+    padding: 0;
+}
+
 /* styling for header */
 
 header ul{
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     min-width: 300px;
+}
+
+header ul li{
+    padding: 5px 20px;
 }
 
 header h1{
@@ -41,8 +49,8 @@ article figure{
 }
 
 article figure img{
-    width: 50%;
-    height: 50%;
+    width: 66%;
+    height: 66%;
 }
 
 article p{
@@ -69,6 +77,14 @@ article p{
     width: 30%;
 }
 
+/* makes first project biggest */
+#work section:first-child{
+    width: 96%;    
+}
+
+#work section h2{
+    text-align: center;
+}
 
 /* styling for footer */
 
@@ -76,6 +92,7 @@ article p{
     display: block;
     width: 100%;
     text-align: center;
+
 }
 
 #contact nav{
@@ -92,7 +109,50 @@ article p{
 }
 
 #contact nav ul li{
-    padding: 0 30px;
+    padding: 10px 30px;
 }
 
 
+/* media queries */
+@media screen and (max-width: 1000px) {
+    #work section{
+        width: 48%;
+    }
+ 
+    article figure img{
+        width: 75%;
+        height: 75%;
+    }
+ 
+}
+
+@media screen and (max-width: 650px) {
+    header{
+        display: block;
+        align-content: center;
+        text-align: center;
+    }
+    header ul{
+        align-content: center;
+    }
+
+    header ul li{
+        display: block;
+    }
+    
+    #work section{
+        width: 96%;
+    }
+
+    article{
+        flex-direction: column;
+    }
+
+    #contact nav ul{
+        display: block;
+    }
+
+    #contact nav ul li{
+        text-align: center;
+    }
+}
