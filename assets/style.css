@@ -69,3 +69,24 @@ article p{
     width: 30%;
 }
 
+
+/* styling for footer */
+#contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#contact ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#contact ul li{
+    display: inline;
+    margin: 0 20px;
+}
