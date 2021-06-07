@@ -107,7 +107,7 @@ article p{
 
 /* makes first project biggest */
 #work section:first-child{
-    width: 96%;    
+    width: 75%;    
 }
 
 #work section a{
