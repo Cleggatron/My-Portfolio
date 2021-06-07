@@ -82,6 +82,15 @@ article p{
     width: 96%;    
 }
 
+#work section a{
+    width: 100%;
+}
+
+#work section a img{
+    width: 100%;
+}
+
+
 #work section h2{
     text-align: center;
 }
