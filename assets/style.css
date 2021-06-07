@@ -1,20 +1,51 @@
+:root{
+    
+}
+
 
 
 /* Element Styles*/
+body{
+    background-color: #e9d2f4;
+    margin: 0;
+}
+
 header{
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #39393A;
+}
 
+h1{
+    font-size: 250%;
+}
+
+h2{
+    font-size: 150%;
 }
 
 ul{
     padding: 0;
 }
 
-/* styling for header */
+a{
+    color: #508ea5;
+}
 
+footer{
+    background-color: #39393A;
+}
+
+section p {
+    text-align: center;
+}
+
+/* styling for header */
+header{
+    color: #b6b6b2;
+}
 header ul{
     display: inline-flex;
     justify-content: flex-end;
@@ -25,12 +56,8 @@ header ul li{
     padding: 5px 20px;
 }
 
-header h1{
-    font-size: 200%;
-}
-
 header a{
-    text-decoration: none;
+    text-decoration: none;    
 }
 
 /*styling for photo and bio*/
@@ -75,6 +102,7 @@ article p{
     flex-direction: column;
     justify-content: center;
     width: 30%;
+    border-bottom: 2px solid #9B9B93
 }
 
 /* makes first project biggest */
@@ -90,22 +118,34 @@ article p{
     width: 100%;
 }
 
+#work section a img:hover{
+    border: 5px solid #39393A;
+}
+
+#work section a img:focus{
+    border: 5px solid #39393A;
+}
 
 #work section h2{
     text-align: center;
 }
 
 /* styling for footer */
+#contact{
+    display: flex;
+    flex-direction: column;
+    color: #b6b6b2;
+}
 
 #contact h3{
     display: block;
     width: 100%;
     text-align: center;
-
 }
 
 #contact nav{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -113,8 +153,9 @@ article p{
 #contact nav ul{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    margin-top: 0;
 }
 
 #contact nav ul li{
@@ -124,6 +165,10 @@ article p{
 
 /* media queries */
 @media screen and (max-width: 1000px) {
+    header{
+        flex-direction: column;
+    }
+    
     #work section{
         width: 48%;
     }
@@ -137,24 +182,26 @@ article p{
 
 @media screen and (max-width: 650px) {
     header{
-        display: block;
+        flex-direction: column;
         align-content: center;
         text-align: center;
     }
     header ul{
         align-content: center;
+        flex-direction: column;
     }
 
     header ul li{
         display: block;
+        padding: 0.5em 0;
     }
     
-    #work section{
-        width: 96%;
-    }
-
     article{
         flex-direction: column;
+    }
+
+    #work section{
+        width: 96%;
     }
 
     #contact nav ul{
@@ -164,4 +211,5 @@ article p{
     #contact nav ul li{
         text-align: center;
     }
+
 }
