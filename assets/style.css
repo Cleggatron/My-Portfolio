@@ -1,25 +1,20 @@
 :root{
-    
+    --bodyBackground: #e9d2f4;
+    --altBackground: #39393A;
+    --altTextCol: #b6b6b2;
+    --hyperlinkCol: #508ea5;
+    --botBorder: #9B9B93;
 }
-
-
 
 /* Element Styles*/
 body{
-    background-color: #e9d2f4;
+    background-color: var(--bodyBackground);
     margin: 0;
-}
-
-header{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #39393A;
 }
 
 h1{
     font-size: 250%;
+    padding: 0 1rem;
 }
 
 h2{
@@ -30,21 +25,30 @@ ul{
     padding: 0;
 }
 
+li{
+    text-align: center;
+    padding: 10px 30px;
+}
+
 a{
-    color: #508ea5;
+    color: var(--hyperlinkCol);
+    text-decoration: none;
 }
 
 footer{
-    background-color: #39393A;
+    background-color: var(--altBackground);
 }
 
-section p {
-    text-align: center;
-}
 
 /* styling for header */
 header{
-    color: #b6b6b2;
+    color: var(--altTextCol);
+    background-color: var(--altBackground);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 header ul{
     display: inline-flex;
@@ -52,21 +56,21 @@ header ul{
     min-width: 300px;
 }
 
-header ul li{
-    padding: 5px 20px;
-}
-
-header a{
-    text-decoration: none;    
-}
 
 /*styling for photo and bio*/
+
 article{
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
+article p{
+    display: inline;
+    max-width: 66%;
+}
+/*Limits the Avatar size within the container. I found at full size it looked incongruous*/
 article figure{
     max-width: 33%;
     height: auto;
@@ -80,14 +84,10 @@ article figure img{
     height: 66%;
 }
 
-article p{
-    display: inline;
-    max-width: 66%;
-    height:fit-content
-}
 
-/* styling for projects */
-#work{
+/* styling for projects keeps them and their content centered & fixed width*/
+
+main{
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -96,45 +96,43 @@ article p{
     align-items: center;
 }
 
-#work section{
+main section{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 30%;
-    border-bottom: 2px solid #9B9B93
+    border-bottom: 2px solid var(--botBorder);
 }
 
-/* makes first project biggest */
-#work section:first-child{
-    width: 75%;    
-}
-
-#work section a{
-    width: 100%;
-}
-
-#work section a img{
-    width: 100%;
-}
-
-#work section a img:hover{
-    border: 5px solid #39393A;
-}
-
-#work section a img:focus{
-    border: 5px solid #39393A;
-}
-
-#work section h2{
+main section h2, main section p {
     text-align: center;
 }
 
+main section a img{
+    width: 100%;
+} 
+
+main section a img:hover{
+    border: 5px solid var(--altBackground);
+}
+
+main section a img:focus{
+    border: 5px solid var(--altBackground);
+}
+
+/* makes first project biggest */
+main section:first-child{
+    width: 75%;    
+}
+
+
 /* styling for footer */
+
 #contact{
     display: flex;
     flex-direction: column;
-    color: #b6b6b2;
+    color: var(--altTextCol);
 }
 
 #contact h3{
@@ -158,18 +156,14 @@ article p{
     margin-top: 0;
 }
 
-#contact nav ul li{
-    padding: 10px 30px;
-}
 
-
-/* media queries */
+/* media queries  moves to 2 columns and bumps up the avatar size to preserve some scaling*/
 @media screen and (max-width: 1000px) {
     header{
         flex-direction: column;
     }
     
-    #work section{
+    main section{
         width: 48%;
     }
  
@@ -180,6 +174,7 @@ article p{
  
 }
 
+/*Moves to 1 column*/
 @media screen and (max-width: 650px) {
     header{
         flex-direction: column;
@@ -195,12 +190,16 @@ article p{
         display: block;
         padding: 0.5em 0;
     }
+    article figure img{
+        height: 100%;
+        width: 100%;
+    }
     
     article{
         flex-direction: column;
     }
-
-    #work section{
+    /*resets the width of all the sections*/
+    main section, main section:first-child{
         width: 96%;
     }
 
@@ -208,8 +207,5 @@ article p{
         display: block;
     }
 
-    #contact nav ul li{
-        text-align: center;
-    }
-
+    
 }
