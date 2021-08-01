@@ -66,9 +66,13 @@ article{
     align-items: center;
 }
 
-article p{
+article #articleText{
     display: inline;
     max-width: 66%;
+}
+
+#articleText p a{
+    text-align: center;
 }
 /*Limits the Avatar size within the container. I found at full size it looked incongruous*/
 article figure{
