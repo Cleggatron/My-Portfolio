@@ -67,8 +67,13 @@ article{
 }
 
 article #articleText{
-    display: inline;
+    display: flex;
     max-width: 66%;
+    flex-direction: column;
+}
+
+#articleText p{
+    width: 100%
 }
 
 #articleText p a{
